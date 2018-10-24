@@ -1,0 +1,36 @@
+<!--
+  Generated template for the ResetPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar text-center color="calm">
+    <ion-title>Reset Password</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content text-center class="body">
+
+  <form [formGroup]="todo" (ngSubmit)="reset(todo)">
+  
+     <ion-item >
+      <ion-label style="font-size: 13pt;color: black" floating> <ion-icon  name="mail" item-start></ion-icon>Email</ion-label>
+      <ion-input type= "email" formControlName= "email" [class.error1]="!todo.controls.email.valid && todo.controls.email.dirty"></ion-input>
+    </ion-item>
+
+     <ion-item no-lines *ngIf="( todo.get('email').hasError('minlength') || todo.get('email').hasError('pattern') ||todo.get('email').hasError('required') ) && todo.get('email').touched">
+      <div class="error" *ngIf="todo.get('email').hasError('required') && todo.get('email').touched">
+       <p style="font-size: 8pt;color: #F44336">Please input your email</p> 
+      </div>
+      <div class="error" *ngIf="todo.get('email').hasError('pattern') && todo.get('email').touched">
+       <p style="font-size: 8pt;color: #F44336" > Email address invalid</p>
+      </div>
+    </ion-item>
+
+     <button ion-button [disabled]="!todo.valid" class="btnSign"> Reset</button>
+     </form>
+</ion-content>

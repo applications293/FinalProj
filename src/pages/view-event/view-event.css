@@ -1,0 +1,25 @@
+page-view-event ion-card {
+  height: 65%;
+  position: relative;
+}
+
+page-view-event ion-card-title {
+  transform: translateY(-20px);
+}
+
+page-view-event ion-grid {
+  transform: translateY(-32px);
+}
+
+page-view-event ion-navbar {
+  margin: 0.5em;
+  max-width: 95%;
+  border-radius: 5px;
+}
+
+page-view-event .body ion-item {
+  margin: 0.5em;
+  border-radius: 5px;
+  width: 90%;
+  background: none;
+}

@@ -1,0 +1,53 @@
+page-view-event {
+    //  .EventBody img{
+    //     border-radius: 50px;
+    //  }
+    //  .EventBody ion-item{
+    //     background-color: #2794D2;
+    //  }
+    .default_msg{
+        padding-top: 30%;
+        h2{
+            color: white;
+        }
+
+        h3{
+            color: white;
+        }
+    }
+
+    ion-card{
+        height: 65%;
+        //height: auto;
+        position: relative;
+    }
+    ion-card-title{
+        transform: translateY(-20px);
+    }
+
+    ion-grid{
+        transform: translateY(-32px);
+    }
+    ion-navbar{
+        margin: 0.5em;
+        max-width: 95%;
+        border-radius: 5px;
+      }
+
+      .body ion-item{
+        margin: 0.5em;
+        border-radius: 5px;
+        width: 90%;
+        background: none;
+    }
+}
+
+
+
+// @media all and (min-width:960px) and (max-width: 1024px) { /* put your css styles in here / }
+// @media all and (min-width:801px) and (max-width: 959px) { / put your css styles in here / }
+// @media all and (min-width:769px) and (max-width: 800px) { / put your css styles in here / }
+// @media all and (min-width:569px) and (max-width: 768px) { / put your css styles in here / }
+// @media all and (min-width:481px) and (max-width: 568px) { / put your css styles in here / }
+// @media all and (min-width:321px) and (max-width: 480px) { / put your css styles in here / }
+// @media all and (min-width:0px) and (max-width: 320px) { / put your css styles in here */ }

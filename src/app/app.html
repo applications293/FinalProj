@@ -1,0 +1,29 @@
+<ion-menu id="myMenu" [content]="content">
+
+  <ion-content text-center>
+      <!-- <ion-avatar style="transform: translate(20px, 110px)">
+          <img style="height: 30px; width: 30px;" src="./assets/imgs/info2.png" ion-fab (click)="about()">
+        </ion-avatar> -->
+    <div *ngFor="let userInfo of userProfile">
+      <!-- profilr-Logo Default -->
+    <img style="border-radius: 250px;margin: 15px 0 0 0" src="{{userInfo.photoURL}}" height="105" width="105"> 
+      
+  
+
+    <ion-icon *ngIf = "userInfo.username != 'Community-App'" style="transform:translateY(-35px);transform:translateX(-35px);font-size: 30pt;color:black;background: none" name="settings" (click) = "updateProfile()"></ion-icon><br>
+    <p style="font-size: 15pt">{{userInfo.username}}</p>
+    </div >
+ 
+    <!-- <img ngIF="signedIn == true" style="border-radius: 300px;margin: 15px 0 0 0" src='{{user?.photoURL}}' alt="not available" height="150" width="150"><ion-icon style="transform:translateY(-35px);transform:translateX(-35px);font-size: 40pt;color:#26C6DA;-webkit-text-stroke:1px black" name="settings"></ion-icon><br> -->
+
+    <ion-list >
+      <button color="alpha" style="border-radius: 4px; font-size: 12pt" class="ion" menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon style=" font-size: 18pt; margin: 0 10px 0 0; color: rgb(47, 163, 209)" name="{{p.icon}}"></ion-icon>&nbsp;&nbsp;{{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

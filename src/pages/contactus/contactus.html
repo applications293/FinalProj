@@ -1,0 +1,108 @@
+
+<ion-header>
+
+  <ion-navbar color="calm" >
+    <!-- <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Contact us</ion-title> -->
+    <ion-row>
+        <ion-col col-1>
+            <button ion-button menuToggle>
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-col>
+        <ion-col text-center>
+            <ion-title >Contact us</ion-title>
+        </ion-col>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="body" text-center>
+    <p style="font-weight: bold">Contact us using the form below :</p>
+  <form *ngIf="contactus" [formGroup]="contacts"  (onSubmit)="submit()">
+    <ion-item>
+        <ion-label style="font-size: 13pt;color: black" floating> <ion-icon  name="person" item-start></ion-icon>Name</ion-label>
+      <ion-input  type="text" formControlName="name"> </ion-input>
+    </ion-item>
+   
+    <ion-item no-lines *ngIf="( contacts.get('name').hasError('minlength') || contacts.get('name').hasError('pattern') ||contacts.get('name').hasError('required') ) && contacts.get('name').touched">
+      <div class="error" *ngIf="contacts.get('name').hasError('required') && contacts.get('name').touched ">
+          <p style="font-size: 8pt;color: #F44336">  Please input your name</p>
+      </div>
+      <div class="error" *ngIf="contacts.get('name').hasError('pattern') && contacts.get('name').touched">
+          <p style="font-size: 8pt;color: #F44336">  Invalid name</p> 
+      </div>
+      <div class="error" *ngIf=" contacts.get('name').hasError('minlength')">
+          <p style="font-size: 8pt;color: #F44336">   Enter valid length for name</p> 
+      </div>
+    </ion-item>
+    <ion-item>
+        <ion-label style="font-size: 13pt;color: black" floating> <ion-icon  name="mail" item-start></ion-icon>Email</ion-label>
+        <ion-input type="text" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item no-lines *ngIf="( contacts.get('email').hasError('minlength') || contacts.get('email').hasError('pattern') ||contacts.get('email').hasError('required') ) && contacts.get('email').touched">
+        <div class="error" *ngIf="contacts.get('email').hasError('required') && contacts.get('email').touched ">
+            <p style="font-size: 8pt;color: #F44336">     Please input your email</p>
+        </div>
+        <div class="error" *ngIf="contacts.get('email').hasError('pattern') && contacts.get('email').touched">
+            <p style="font-size: 8pt;color: #F44336">     Invalid email</p>
+        </div>
+        <div class="error" *ngIf=" contacts.get('email').hasError('minlength')">
+            <p style="font-size: 8pt;color: #F44336">     Enter valid length for email</p>
+        </div>
+      </ion-item>
+      <ion-item>
+          <ion-label style="font-size: 13pt;color: black" floating> <ion-icon  name="contact" item-start></ion-icon>Contact </ion-label>
+          <ion-input type="text" formControlName="contactNo"></ion-input>
+        </ion-item>
+        <ion-item no-lines *ngIf="( contacts.get('contactNo').hasError('minlength') || contacts.get('contactNo').hasError('pattern') ||contacts.get('contactNo').hasError('required') ) && contacts.get('contactNo').touched">
+          <div class="error" *ngIf="contacts.get('contactNo').hasError('required') && contacts.get('contactNo').touched ">
+              <p style="font-size: 8pt;color: #F44336">     Please input your contact no</p>
+          </div>
+          <div class="error" *ngIf="contacts.get('contactNo').hasError('pattern') && contacts.get('contactNo').touched">
+              <p style="font-size: 8pt;color: #F44336">      Invalid number</p>
+          </div>
+          <div class="error" *ngIf=" contacts.get('contactNo').hasError('minlength')  && contacts.get('contactNo').touched">
+              <p style="font-size: 8pt;color: #F44336"> Enter valid length for number</p>  
+          </div>
+        </ion-item>
+        <ion-item>
+            <ion-label style="font-size: 13pt;color: black" floating> <ion-icon  name="help" item-start></ion-icon>Subject </ion-label>
+            <ion-input type="text" formControlName="subject"></ion-input>
+          </ion-item>
+          <ion-item no-lines *ngIf="( contacts.get('subject').hasError('minlength') || contacts.get('subject').hasError('pattern') ||contacts.get('subject').hasError('required') ) && contacts.get('subject').touched">
+            <div class="error" *ngIf="contacts.get('subject').hasError('required') && contacts.get('subject').touched ">
+                <p style="font-size: 8pt;color: #F44336">   Please input your subject</p> 
+            </div>
+            <div class="error" *ngIf="contacts.get('subject').hasError('pattern') && contacts.get('subject').touched">
+                <p style="font-size: 8pt;color: #F44336">   Invalid subject</p>   
+            </div>
+            <div class="error" *ngIf=" contacts.get('subject').hasError('minlength')">
+                <p style="font-size: 8pt;color: #F44336">Enter valid length for subject</p>    
+            </div>
+          </ion-item>
+        <ion-item>
+            <textarea  style="border-radius: 5px;width: 100%;background: rgba(255, 255, 255, 0.5);border: none;font-size: 12pt;font-weight: lighter;"   placeholder="Your message..."formControlName="message" cols="120" rows="5"></textarea>
+          </ion-item>
+          <ion-item no-lines *ngIf="( contacts.get('message').hasError('minlength') || contacts.get('message').hasError('pattern') ||contacts.get('message').hasError('required') ) && contacts.get('message').touched">
+            <div class="error" *ngIf="contacts.get('message').hasError('required') && contacts.get('message').touched ">
+                <p style="font-size: 8pt;color: #F44336"> Please input your message</p>     
+            </div>
+            <div class="error" *ngIf="contacts.get('message').hasError('pattern') && contacts.get('message').touched">
+                <p style="font-size: 8pt;color: #F44336"> Invalid message</p>     
+            </div>
+            <div class="error" *ngIf=" contacts.get('message').hasError('minlength')">
+                <p style="font-size: 8pt;color: #F44336">  Enter valid length for message</p> 
+            </div>
+          </ion-item>
+          
+     <button class="btnSign" ion-button (click)="submit()">Submit</button>
+          
+        
+
+  </form>
+
+</ion-content>

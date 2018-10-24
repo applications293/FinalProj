@@ -1,0 +1,166 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar text-center color="calm">
+      <ion-title>Register</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding class="body" text-center>
+    <form [formGroup]="todo" >
+  
+      <p style="font-size: 13pt">Please fill in the registration form</p>
+  
+      <ion-list>
+      <ion-item>
+         <ion-label style="font-size: 13pt;color: black"  floating> <ion-icon name="person" item-start></ion-icon>Full Names</ion-label>
+         <ion-input [(ngModel)]="FullName" type="text" formControlName="fullName" [class.error1]="!todo.controls.fullName.valid && todo.controls.fullName.dirty"></ion-input>
+  
+         </ion-item>
+  
+         <ion-item no-lines *ngIf="( todo.get('fullName').hasError('minlength') || todo.get('fullName').hasError('maxlength') ||todo.get('fullName').hasError('pattern') ||todo.get('fullName').hasError('required') ) && todo.get('fullName').touched">
+          <div class="error" *ngIf="todo.get('fullName').hasError('required') && todo.get('fullName').touched">
+            Please input your Full names
+          </div>
+          <div class="error" *ngIf="todo.get('fullName').hasError('pattern') && todo.get('fullName').touched">
+            Use alphabet character only
+          </div>
+        </ion-item>
+  
+  
+      <ion-item>
+              <ion-label style="font-size: 13pt;color: black"  floating>  <ion-icon name="transgender" item-start></ion-icon>Gender</ion-label>
+        
+              <ion-select type="input" formControlName="gender">
+                <ion-option value="Female">Female</ion-option>
+                <ion-option value="Male">Male</ion-option>
+                <ion-option value="Transgender">Transgender</ion-option>
+              </ion-select>
+            </ion-item>
+  <!-- 
+            [class.error1]="!todo.controls.gender.valid && todo.controls.gender.dirty" 
+        <ion-item no-lines *ngIf="( todo.get('gender').hasError('minlength') || todo.get('gender').hasError('maxlength') ||todo.get('gender').hasError('pattern') ||todo.get('gender').hasError('required') ) && todo.get('gender').touched">
+          <div class="error" *ngIf="todo.get('gender').hasError('required') && todo.get('gender').touched">
+            Select your Gender
+          </div>
+        </ion-item> -->
+  
+      
+      <ion-item>
+              <!-- <ion-input type= "text" formControlName= "dof">  DateOfBirth</ion-input> -->
+             
+              <ion-label style="font-size: 13pt;color: black"  floating>  <ion-icon name="calendar"  item-start></ion-icon> Date Of Birth</ion-label>
+              <ion-datetime displayFormat="MM/DD/YYYY" formControlName="dof"  [class.error1]="!todo.controls.dof.valid && todo.controls.dof.dirty"></ion-datetime>
+              </ion-item>
+  
+              
+        <ion-item no-lines *ngIf="( todo.get('dof').hasError('minlength') || todo.get('dof').hasError('maxlength') ||todo.get('dof').hasError('pattern') ||todo.get('dof').hasError('required') ) && todo.get('dof').touched">
+          <div class="error" *ngIf="todo.get('dof').hasError('required') && todo.get('dof').touched">
+            Please select your Date of Birth
+          </div>
+        </ion-item>
+             
+        <ion-item >
+            <ion-label style="font-size: 13pt;color: black"  floating ><ion-icon name="call" item-start></ion-icon> Contact Number</ion-label>
+            <ion-input type= "number"formControlName= "Number" [class.error1]="!todo.controls.Number.valid && todo.controls.Number.dirty" >PhoneNumber</ion-input>
+        </ion-item>
+  
+        <ion-item no-lines *ngIf="( todo.get('Number').hasError('minlength') || todo.get('Number').hasError('maxlength') ||todo.get('Number').hasError('pattern') ||todo.get('Number').hasError('required') ) && todo.get('Number').touched">
+          <div class="error" *ngIf="todo.get('Number').hasError('required') && todo.get('Number').touched">
+            Please provide your contact numbers
+          </div>
+          <div class="error" *ngIf="todo.get('Number').hasError('pattern') && todo.get('Number').touched">
+            invalid contact numbers
+          </div>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label style="font-size: 13pt;color: black"  floating>  <ion-icon name="navigate" item-start></ion-icon>Address</ion-label>
+          <ion-select type="input" formControlName="address" >
+            <ion-option value="Soshanguve-DD">Soshanguve-DD</ion-option>
+            <ion-option value="Soshanguve-H">Soshanguve-H</ion-option>
+            <ion-option value="Soshanguve-L">Soshanguve-L</ion-option>
+            <ion-option value="Soshanguve-JJ">Soshanguve-JJ</ion-option>
+            <ion-option value="Soshanguve-GG">Soshanguve-GG</ion-option>
+            <ion-option value="Soshanguve-FF">Soshanguve-FF</ion-option>
+            <ion-option value="Soshanguve-KK West">Soshanguve-KK West</ion-option>
+            <ion-option value="Soshanguve-X">Soshanguve-X</ion-option>
+            <ion-option value="Soshanguve-BB">Soshanguve-BB</ion-option>
+            <ion-option value="Soshanguve-PP west">Soshanguve-PP west</ion-option>
+            <ion-option value="Soshanguve-SS">Soshanguve-SS</ion-option>
+            <ion-option value="Soshanguve-C">Soshanguve-C</ion-option>
+            <ion-option value="Soshanguve-V">Soshanguve-V</ion-option>
+            <ion-option value="Soshanguve-F">Soshanguve-F</ion-option>
+          
+          </ion-select>
+        </ion-item>
+  
+        <!-- [class.error1]="!todo.controls.address.valid && todo.controls.address.dirty"
+        <ion-item no-lines *ngIf="( todo.get('address').hasError('required') ||todo.get('address').hasError('required') ) && todo.get('address').touched">
+          <div class="error" *ngIf="todo.get('address').hasError('required') && todo.get('address').touched">
+            Please provide your Address
+          </div>
+        </ion-item> -->
+  
+             
+        <ion-item >
+          <ion-label style="font-size: 13pt;color: black"  floating> <ion-icon name="mail" item-start></ion-icon>Email</ion-label>
+          <ion-input [(ngModel)]="useremail" type= "email" formControlName= "email" [class.error1]="!todo.controls.email.valid && todo.controls.email.dirty"> Email</ion-input>
+        </ion-item>
+    
+    
+        <ion-item no-lines *ngIf="( todo.get('email').hasError('minlength') || todo.get('email').hasError('pattern') ||todo.get('email').hasError('required') ) && todo.get('email').touched">
+          <div class="error" *ngIf="todo.get('email').hasError('required') && todo.get('email').touched">
+            Please input your email
+          </div>
+          <div class="error" *ngIf="todo.get('email').hasError('pattern') && todo.get('email').touched">
+            Email address invalid
+          </div>
+        </ion-item>
+  
+        
+  
+        <ion-item >
+            <ion-label style="font-size: 13pt;color: black"  floating> <ion-icon name="key" item-start></ion-icon> Password</ion-label>
+            
+            <ion-input [(ngModel)]="userpassword" type= "password" formControlName="password"  [class.error1]="!todo.controls.password.valid && todo.controls.password.dirty"> Password</ion-input>
+        </ion-item>
+  
+        <ion-item no-lines *ngIf="( todo.get('password').hasError('minlength') || todo.get('password').hasError('maxlength') ||todo.get('password').hasError('required') ) && todo.get('password').touched">
+          <div class="error" *ngIf="todo.get('password').hasError('required') && todo.get('password').touched">
+            Please input your password
+          </div>
+          <div class="error" *ngIf="todo.get('password').hasError('minlength') && todo.get('password').touched">
+            Minimum 6 characters
+          </div>
+          <div class="error" *ngIf="todo.get('password').hasError('maxlength') && todo.get('password').touched">
+            Maximum 12 characters
+          </div>
+        </ion-item>
+  
+  
+  
+  
+  
+  
+      </ion-list>
+      <button class="btnSign" [disabled]="!todo.valid" ion-button (click)="signUp(todo)">SignUp</button>
+  </form>
+  
+         <br> 
+  
+         
+          <!-- <button ion-button (click)="SignIn()" >SignIn </button>
+          <button ion-button (click)="logInWithGoogle()">Google</button> <br> <br>
+  
+          <button clear full (click)="ForgotPassword()" id="jav">Forgot Password</button> -->
+  
+  </ion-content>
+  

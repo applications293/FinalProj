@@ -1,0 +1,25 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content class="body">
+    <ion-buttons end class="btn">
+        <button ion-button clear color="alpha" (click)="mainPage()">Skip</button>
+      </ion-buttons>
+  <ion-slides pager>
+    <ion-slide *ngFor="let slide of slides">
+      
+       
+
+      <div >
+        <img style="border-radius:50%;height: 50%;width: 50%;margin: 0 0 100px 0" [src]="slide.image" class="slide-image" />
+        <h3 class="slide-title" [innerHTML]="slide.title"></h3>
+        <a style="color: white;font-weight: lighter;font-size: 12pt" [innerHTML]="slide.description"></a>
+        <button class="btnSign" ion-button *ngIf = "slide.index == 3" (click)="mainPage()">Get Started</button>
+      </div>
+    </ion-slide>
+  </ion-slides> 
+  
+</ion-content>

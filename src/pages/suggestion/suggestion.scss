@@ -1,0 +1,22 @@
+page-suggestion {
+    .body .message-container{
+        border-radius: 5px; 
+        // background: rgba($color: #D4E157, $alpha: 1.0); 
+        margin: 0.5em;
+        width: 95%;
+        padding: 0;
+      } 
+      .body textarea{
+        margin: 0.5em;
+        width: 95%;
+       }
+      .body img{
+          border-radius: 400px;
+      }
+      
+      ion-navbar{
+        margin: 0.5em;
+        max-width: 95%;
+        border-radius: 5px;
+      }
+}

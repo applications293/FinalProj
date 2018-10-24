@@ -1,0 +1,31 @@
+page-job-details {
+    ion-content{
+        
+        background: rgb(140,248,255);
+        background: -moz-linear-gradient(left, rgb(140,248,255) 0%, rgb(120,203,174) 0%, rgb(159,231,255) 100%);
+        background: -webkit-linear-gradient(left, rgb(140,248,255) 0%, rgb(120,203,174) 0%, rgb(159,231,255) 100%);
+        background: linear-gradient(to right, rgb(140,248,255) 0%, rgb(120,203,174) 0%, rgb(159,231,255) 100%);
+          
+}
+
+ion-navbar{
+    margin: 0.5em;
+    max-width: 95%;
+    border-radius: 5px; 
+  }
+  
+  .body ion-item{
+    margin: 0.5em;
+    border-radius: 5px;
+    width: 90%;
+    background: none;
+} 
+.btnSign{ 
+    background: none;
+    border: 1px solid white;
+    border-radius: 5px; 
+    margin: 0.5em;
+    width: 95%;
+    padding: 0.5em;
+}
+}

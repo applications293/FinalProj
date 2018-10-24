@@ -1,0 +1,36 @@
+<!--
+  Generated template for the EventDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>eventDetails</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="body">
+  <div>
+    <img src="{{event?.downloadUrl}}">
+  </div>
+
+  <ion-list>
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            {{event?.eventVenue}}
+          </ion-col>
+          <ion-col>{{event?.eventName}}</ion-col>
+          <ion-col>{{event?.eventDate}}</ion-col>
+      </ion-row></ion-item>
+    <ion-item (click)="checkIN()">Check-in</ion-item>
+    <ion-item>Messages</ion-item>
+    <ion-item>Attendees</ion-item>
+    <ion-item>Polls</ion-item>
+  </ion-list>
+
+</ion-content>

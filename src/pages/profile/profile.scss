@@ -1,0 +1,32 @@
+.body{  
+    background: url('../assets/imgs/Appbackground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}    
+ion-menu{
+        ion-content{ 
+         background: url('../assets/imgs/Appbackground.jpg');
+         background-repeat: no-repeat;
+         background-size: cover;
+} 
+}
+.sideMenu ion-item{
+   background: black;
+
+} 
+
+.body ion-item{
+    margin: 0.5em;
+    border-radius: 5px;
+    width: 90%;
+    background: none;
+} 
+
+.btnSign{ 
+    background: none;
+    border: 1px solid white;
+    border-radius: 5px; 
+    margin: 0.5em;
+    width: 95%;
+    padding: 0.5em;
+}
